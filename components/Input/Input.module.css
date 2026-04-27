@@ -15,14 +15,14 @@
 .InputTitle {
   font-size: 0.8rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--fg);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
 }
 
 .Required {
-  color: var(--black);
+  color: var(--fg);
   font-weight: 800;
   font-size: 0.9rem;
 }
@@ -32,26 +32,26 @@
   height: 48px;
   box-sizing: border-box;
   padding: 0 14px;
-  background: var(--white);
-  border: 3px solid var(--black);
-  box-shadow: 4px 4px 0 var(--black);
+  background: var(--bg);
+  border: 3px solid var(--fg);
+  box-shadow: 4px 4px 0 var(--fg);
   border-radius: 0;
   outline: none;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--black);
+  color: var(--fg);
   letter-spacing: 0.02em;
   transition: box-shadow 0.1s ease, transform 0.1s ease;
 }
 
 .Input::placeholder {
-  color: #999;
+  color: var(--muted);
   font-weight: 500;
 }
 
 .Input:focus {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--black);
+  box-shadow: 6px 6px 0 var(--fg);
 }
 
 .Textarea {
@@ -63,7 +63,7 @@
 }
 
 .Error {
-  border-color: var(--black) !important;
+  border-color: var(--fg) !important;
   box-shadow: 4px 4px 0 #c0392b !important;
 }
 
@@ -82,4 +82,12 @@
 
 .InputTitleIcon {
   display: none;
+}
+
+.Hint {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  margin: 0;
 }

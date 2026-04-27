@@ -1,0 +1,28 @@
+.root {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.sticker {
+  position: absolute;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.18));
+  transition: transform 0.25s ease, filter 0.25s ease;
+  pointer-events: auto;
+  cursor: default;
+}
+
+.sticker:hover {
+  filter: drop-shadow(4px 8px 18px rgba(0, 0, 0, 0.28));
+  /* amplify rotation slightly on hover */
+  scale: 1.08;
+}
+
+@media (max-width: 900px) {
+  .sticker {
+    display: none;
+  }
+}

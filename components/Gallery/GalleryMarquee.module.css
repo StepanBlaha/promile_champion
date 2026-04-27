@@ -1,0 +1,120 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  opacity: 0.35;
+  padding: 0.6rem 2rem;
+  border-top: 3px solid var(--fg);
+}
+
+.row {
+  overflow: hidden;
+  border-top: 3px solid var(--fg);
+  padding: 1rem 0;
+}
+
+.row:last-child {
+  border-bottom: 3px solid var(--fg);
+}
+
+@keyframes left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.trackLeft,
+.trackRight {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+.trackLeft  { animation: left  22s linear infinite; }
+.trackRight { animation: right 18s linear infinite; }
+
+.row:hover .trackLeft,
+.row:hover .trackRight {
+  animation-play-state: paused;
+}
+
+/* ── Card ── */
+.card {
+  flex-shrink: 0;
+  width: 190px;
+  border: 3px solid var(--fg);
+  box-shadow: 4px 4px 0 var(--fg);
+  background: var(--bg);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--fg);
+}
+
+.accent {
+  height: 5px;
+  background: var(--border);
+}
+
+.cardFirst .accent {
+  background: var(--green);
+}
+
+.cardInner {
+  padding: 0.9rem 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.rank {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.cardFirst .rank {
+  color: var(--green);
+}
+
+.promile {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--fg);
+  margin-top: 0.3rem;
+}
+
+.name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg);
+  margin-top: 0.25rem;
+}
+
+.note {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-style: italic;
+}

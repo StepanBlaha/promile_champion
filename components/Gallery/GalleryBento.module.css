@@ -1,0 +1,169 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 0 2rem 2rem;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  opacity: 0.35;
+  padding: 0.6rem 0;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 0;
+  border: 3px solid var(--fg);
+  box-shadow: 6px 6px 0 var(--fg);
+}
+
+/* Featured occupies top-left 2×2 */
+.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  position: relative;
+  min-height: 240px;
+  border-right: 3px solid var(--fg);
+}
+
+.featuredRank {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  background: var(--green);
+  color: var(--fg);
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.featuredPromile {
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--bg);
+}
+
+.featuredName {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bg);
+}
+
+.featuredNote {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--bg);
+  opacity: 0.6;
+}
+
+/* Regular cards */
+.card {
+  border-left: 3px solid var(--fg);
+  border-bottom: 3px solid var(--fg);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: var(--bg);
+  transition: background 0.15s ease;
+  cursor: default;
+}
+
+.card:last-child:nth-child(odd) {
+  grid-column: span 2;
+}
+
+.card:hover {
+  background: var(--green);
+}
+
+.cardRank {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.card:hover .cardRank {
+  color: var(--fg);
+}
+
+.cardPromile {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--fg);
+  margin-top: 0.35rem;
+}
+
+.cardName {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  margin-top: 0.2rem;
+}
+
+.cardNote {
+  font-size: 0.65rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.card:hover .cardNote {
+  color: var(--fg);
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured {
+    grid-column: span 2;
+    min-height: 180px;
+  }
+
+  .featuredPromile {
+    font-size: 3rem;
+  }
+}

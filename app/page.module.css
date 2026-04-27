@@ -1,11 +1,26 @@
 .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  gap: 3.5rem;
+  background: var(--bg);
+  overflow: clip; /* clips stickers without breaking position:sticky children */
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   gap: 2.5rem;
-  background: var(--white);
+  max-width: min(90%, 1200px);
+  padding-top: 100px;
+}
+
+.titleWrap {
+  position: relative;
 }
 
 .title {
@@ -13,13 +28,20 @@
   font-weight: 900;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--black);
-  border: 3px solid var(--black);
+  color: var(--fg);
+  border: 3px solid var(--fg);
   padding: 0.5rem 1.5rem;
-  box-shadow: 6px 6px 0 var(--black);
+  box-shadow: 6px 6px 0 var(--fg);
 }
 
 .buttons {
   display: flex;
   gap: 1.25rem;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
 }

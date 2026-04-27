@@ -10,6 +10,7 @@ interface InputProps {
     onChange?: (val: string | number)=>void;
     type?: string;
     error?: string;
+    hint?: string;
     id?: string;
     name?: string;
     required?: boolean;
@@ -32,6 +33,7 @@ export const Input = ({
     onChange,
     type = "text",
     error = "",
+    hint,
     id,
     name,
     required = false,
@@ -96,6 +98,9 @@ export const Input = ({
                 aria-describedby={describedBy}
                 className={`${styles.Input} ${error !== "" ? styles.Error : ""} ${inputClassName ?? ""}`.trim()}
                 />
+            )}
+            {hint && error === "" && (
+                <p className={styles.Hint}>{hint}</p>
             )}
             {error !== "" &&
             <div className={styles.ErrorFrame}>

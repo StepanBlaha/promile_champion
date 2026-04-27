@@ -1,0 +1,68 @@
+.section {
+  width: 100%;
+}
+
+.marqueeWrapper {
+  overflow: hidden;
+  padding: 1.5rem 0 2rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  width: max-content;
+  /* transform is driven by JS — no CSS animation */
+  will-change: transform;
+}
+
+.card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.2s ease;
+  pointer-events: none; /* let wrapper handle all drag events */
+}
+
+.card:nth-child(even) { transform: rotate(-2deg); }
+.card:nth-child(3n)   { transform: rotate(1.5deg); }
+.card:nth-child(5n)   { transform: rotate(-1deg); }
+
+.imgWrap {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.metaName {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg);
+}
+
+.metaPromile {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--green);
+}

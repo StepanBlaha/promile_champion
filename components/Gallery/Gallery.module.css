@@ -1,0 +1,110 @@
+.section {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: var(--fg);
+  padding-left: 1.5rem;
+  opacity: 0.4;
+}
+
+.marqueeWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-top: 3px solid var(--fg);
+  border-bottom: 3px solid var(--fg);
+  padding: 1.25rem 0;
+}
+
+.track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.marqueeWrapper:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.card {
+  flex-shrink: 0;
+  width: 200px;
+  border: 3px solid var(--fg);
+  padding: 1rem;
+  background: var(--bg);
+  box-shadow: 5px 5px 0 var(--fg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  cursor: default;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--fg);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.rankLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--fg);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.badge {
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--bg);
+  background: var(--green);
+  padding: 0.15rem 0.4rem;
+  text-transform: uppercase;
+}
+
+.promile {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--fg);
+}
+
+.name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg);
+}
+
+.note {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--fg);
+  opacity: 0.5;
+  font-style: italic;
+}
