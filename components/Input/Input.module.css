@@ -1,0 +1,85 @@
+.InputBlock {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.InputTitleBlock {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.InputTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.Required {
+  color: var(--black);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.Input {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  background: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  border-radius: 0;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+
+.Input::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+.Input:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.Textarea {
+  height: auto;
+  min-height: 96px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  resize: vertical;
+}
+
+.Error {
+  border-color: var(--black) !important;
+  box-shadow: 4px 4px 0 #c0392b !important;
+}
+
+.ErrorFrame {
+  padding-left: 2px;
+}
+
+.ErrorFrame p {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.InputTitleIcon {
+  display: none;
+}
