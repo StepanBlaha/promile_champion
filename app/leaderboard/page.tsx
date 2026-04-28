@@ -11,10 +11,12 @@ const PODIUM_ORDER = [1, 0, 2]; // 2nd left · 1st centre · 3rd right
 const PODIUM_HEIGHTS = ['150px', '210px', '110px'];
 const PODIUM_LABELS = ['2.', '1.', '3.'];
 const PODIUM_STICKERS = [
+  {/*
   { src: '/drinks_outline/3.png',  size: 120,  rotate: 35,  bottom: -40, left: -32 },
   { src: '/drinks_outline/17.png', size: 160, rotate: -33, top: 80,    left: -42 },
   { src: '/drinks_outline/11.png', size: 123,  rotate: -35, bottom: -38, left:  -30 },
-];
+  */}
+  ];
 
 export default function Leaderboard() {
   const [entries, setEntries] = useState<Submission[]>([]);
@@ -78,7 +80,7 @@ export default function Leaderboard() {
               if (!e) return <div key={col} className={styles.podiumSlot} />;
               return (
                 <div key={e.id} className={`${styles.podiumSlot} ${idx === 0 ? styles.winner : ''}`}>
-                  <Sticker {...PODIUM_STICKERS[col]} zIndex={20} />
+                  {/*<Sticker {...PODIUM_STICKERS[col]} zIndex={20} />*/}
                   <div className={styles.podiumInfo}>
                     {e.photo_url && (
                       <div className={styles.podiumAvatar}>

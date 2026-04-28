@@ -1,6 +1,7 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.7rem;
   padding: 0.75rem 2rem;
   background: var(--green);
@@ -15,7 +16,12 @@
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
-
+.btn span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
 .btn:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 var(--fg);

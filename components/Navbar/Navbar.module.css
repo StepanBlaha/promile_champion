@@ -18,7 +18,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   font-size: 1.25rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -30,11 +30,11 @@
 
 .logoDot {
   position: absolute;
-  width: 72px;
+  width: 77px;
   height: auto;
-  right: calc(100% - 18px);
+  right: calc(100% - 22px);
   top: 50%;
-  transform: translateY(-50%) rotate(15deg);
+  transform: translateY(-50%) rotate(-15deg);
   pointer-events: none;
 }
 

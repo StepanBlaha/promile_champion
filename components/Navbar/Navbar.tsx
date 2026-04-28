@@ -45,7 +45,7 @@ export default function Navbar() {
       <nav className={styles.navbar}>
         <Sticker src="/drinks_outline/19.png" size={76} rotate={38} bottom={-16} right={-6} zIndex={101} />
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <img src="/drinks_outline/11.png" alt="" aria-hidden className={styles.logoDot} />
+          <img src="/drinks_outline/24.png" alt="" aria-hidden className={styles.logoDot} />
           Šampión Promile
         </Link>
 
