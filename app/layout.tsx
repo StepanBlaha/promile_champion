@@ -18,6 +18,13 @@ const siteUrl = "https://promile-champion.vercel.app";
 export const metadata: Metadata = {
   title: "Šampión Promile",
   description: "Kdo dá nejvíc?",
+  icons: {
+    icon: [
+      { url: "/Favicon/favicon_48x.png", sizes: "48x48", type: "image/png" },
+      { url: "/Favicon/favicon_128x.png", sizes: "128x128", type: "image/png" },
+      { url: "/Favicon/favicon_256x.png", sizes: "256x256", type: "image/png" },
+    ],
+  },
   keywords: [
     "Drinking",
     "Chlastačka",
@@ -27,19 +34,6 @@ export const metadata: Metadata = {
     "Alkohol tester"
   ],
   applicationName: "Šampión Promile",
-  icons: {
-    icon: [
-      
-      { url: "/Favicon/favicon_48x.png", sizes: "48x48", type: "image/png" },
-    ],
-    shortcut: [
-      { url: "/Favicon/favicon_128x.png", sizes: "128x128", type: "image/png" },
-      { url: "/Favicon/favicon_256x.png", sizes: "256x256", type: "image/png" },
-    ],
-    apple: [
-      { url: "/Favicon/favicon_256x.png", sizes: "256x256", type: "image/png" },
-    ],
-  },
   openGraph: {
     type: "website",
     url: siteUrl,
