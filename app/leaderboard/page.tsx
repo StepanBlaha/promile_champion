@@ -5,10 +5,16 @@ import Image from 'next/image';
 import { fetchData } from '@/services/submision';
 import { Submission } from '@/types/submission.types';
 import styles from './page.module.css';
+import Sticker from '@/components/Stickers/Sticker';
 
 const PODIUM_ORDER = [1, 0, 2]; // 2nd left · 1st centre · 3rd right
 const PODIUM_HEIGHTS = ['150px', '210px', '110px'];
 const PODIUM_LABELS = ['2.', '1.', '3.'];
+const PODIUM_STICKERS = [
+  { src: '/drinks_outline/3.png',  size: 120,  rotate: 35,  bottom: -40, left: -32 },
+  { src: '/drinks_outline/17.png', size: 160, rotate: -33, top: 80,    left: -42 },
+  { src: '/drinks_outline/11.png', size: 123,  rotate: -35, bottom: -38, left:  -30 },
+];
 
 export default function Leaderboard() {
   const [entries, setEntries] = useState<Submission[]>([]);
@@ -32,6 +38,7 @@ export default function Leaderboard() {
     return (
       <main className={styles.container}>
         <div className={styles.header}>
+          <Sticker src="/drinks_outline/28.png" size={130} rotate={46}  bottom={-48} left={146} />
           <h1 className={styles.title}>Žebříček</h1>
         </div>
         <div className={styles.skeletonWrap}>
@@ -47,6 +54,7 @@ export default function Leaderboard() {
     return (
       <main className={styles.container}>
         <div className={styles.header}>
+          <Sticker src="/drinks_outline/28.png" size={130} rotate={46}  bottom={-48} left={146} />
           <h1 className={styles.title}>Žebříček</h1>
         </div>
         <p className={styles.empty}>Zatím žádné záznamy. Buď první!</p>
@@ -57,8 +65,8 @@ export default function Leaderboard() {
   return (
     <main className={styles.container}>
       <div className={styles.header}>
+        <Sticker src="/drinks_outline/28.png" size={130} rotate={46}  bottom={-48} left={146} />
         <h1 className={styles.title}>Žebříček</h1>
-        <span className={styles.count}>{entries.length} zápisů</span>
       </div>
 
       {/* ── Podium ── */}
@@ -70,6 +78,7 @@ export default function Leaderboard() {
               if (!e) return <div key={col} className={styles.podiumSlot} />;
               return (
                 <div key={e.id} className={`${styles.podiumSlot} ${idx === 0 ? styles.winner : ''}`}>
+                  <Sticker {...PODIUM_STICKERS[col]} zIndex={20} />
                   <div className={styles.podiumInfo}>
                     {e.photo_url && (
                       <div className={styles.podiumAvatar}>
@@ -92,6 +101,8 @@ export default function Leaderboard() {
       {/* ── Table ── */}
       {rest.length > 0 && (
         <section className={styles.tableSection}>
+          <Sticker src="/drinks_outline/25.png" size={135} rotate={-38} top={-12} right={-12} zIndex={5} />
+          <Sticker src="/drinks_outline/6.png"  size={100}  rotate={35}  bottom={-0} left={10} zIndex={5} />
           <table className={styles.table}>
             <thead>
               <tr>

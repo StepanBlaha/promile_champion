@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 52px);
+  background: var(--bg);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 2.5rem 2rem 0;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--fg);
+  position: relative;
+}
+
+.count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}

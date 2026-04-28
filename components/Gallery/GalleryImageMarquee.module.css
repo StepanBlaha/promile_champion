@@ -3,7 +3,6 @@
 }
 
 .marqueeWrapper {
-  overflow: hidden;
   padding: 1.5rem 0 2rem;
   cursor: grab;
   user-select: none;
@@ -20,6 +19,7 @@
 
 .card {
   flex-shrink: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +31,10 @@
 .card:nth-child(even) { transform: rotate(-2deg); }
 .card:nth-child(3n)   { transform: rotate(1.5deg); }
 .card:nth-child(5n)   { transform: rotate(-1deg); }
+
+.imgOuter {
+  position: relative;
+}
 
 .imgWrap {
   position: relative;

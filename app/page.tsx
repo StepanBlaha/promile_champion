@@ -18,13 +18,13 @@ export default function Home() {
       <div className={styles.content}>
         {/* stickers on the hero title box */}
         <div className={styles.titleWrap}>
-          <Sticker src="/drinks/branik.jpg"   size={100} rotate={-14} top={-55}  right={-40} />
-          <Sticker src="/drinks/jsger.png"    size={82}  rotate={12}  bottom={-50} left={-30} />
-          <h1 className={styles.title}>Promile Champion</h1>
+          <Sticker src="/drinks_outline/5.png"   size={140} rotate={-14} top={-55}  right={-70} />
+          <Sticker src="/drinks_outline/11.png"    size={130}  rotate={12}  bottom={-50} left={-60} />
+          <h1 className={styles.title}>Šampión Promile</h1>
         </div>
         <div className={styles.buttons}>
-          <PrimaryButton onClick={() => router.push('/add')}>Add Submition</PrimaryButton>
-          <SecondaryButton onClick={() => router.push('/leaderboard')}>Leaderboard</SecondaryButton>
+          <PrimaryButton onClick={() => router.push('/add')}>Přidat Alkoholika</PrimaryButton>
+          <SecondaryButton onClick={() => router.push('/leaderboard')}>Žebříček</SecondaryButton>
         </div>
       </div>
 

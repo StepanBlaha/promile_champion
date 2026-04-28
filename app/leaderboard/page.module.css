@@ -7,6 +7,7 @@
 
 /* ── Header ── */
 .header {
+  position: relative;
   display: flex;
   align-items: baseline;
   gap: 1.25rem;
@@ -79,6 +80,7 @@
 }
 
 .podiumSlot {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -91,7 +93,7 @@
   position: relative;
   width: 72px;
   height: 72px;
-  border-radius: 50%;
+  border-radius: 14px;
   overflow: hidden;
   border: 3px solid var(--fg);
   box-shadow: 3px 3px 0 var(--fg);
@@ -179,6 +181,7 @@
 
 /* ── Table ── */
 .tableSection {
+  position: relative;
   padding: 2rem;
 }
 
@@ -240,7 +243,7 @@
   position: relative;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 14px;
   overflow: hidden;
   border: 2px solid var(--fg);
   flex-shrink: 0;

@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 import PrimaryButton from '@/components/Button/PrimaryButton';
 import SecondaryButton from '@/components/Button/SecondaryButton';
+import Sticker from '@/components/Stickers/Sticker';
 import { Input } from '@/components/Input/Input';
 import { Camera, ImageUp } from 'lucide-react';
 import { useRef, useState } from 'react';
@@ -118,7 +119,11 @@ export default function Add() {
   return (
     <main className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Add an Alcoholic</h1>
+        <div className={styles.titleWrap}>
+          <Sticker src="/drinks_outline/7.png"  size={115} rotate={-38} top={-52}    right={-42} />
+          <Sticker src="/drinks_outline/23.png" size={98}  rotate={35}  bottom={-46} left={-36} />
+          <h1 className={styles.title}>Přidat Alkoholika</h1>
+        </div>
 
         <div className={styles.Form}>
           <Input
@@ -175,12 +180,15 @@ export default function Add() {
               className={styles.HiddenInput}
               onChange={handleFileChange}
             />
-            <PrimaryButton
-              onClick={handleSubmit}
-              disabled={status === 'loading'}
-            >
-              {status === 'loading' ? 'Ukládám…' : 'Odeslat'}
-            </PrimaryButton>
+            <div className={styles.submitWrap}>
+              <Sticker src="/drinks_outline/13.png" size={88} rotate={35} top={-3} right={-40} zIndex={10} />
+              <PrimaryButton
+                onClick={handleSubmit}
+                disabled={status === 'loading'}
+              >
+                {status === 'loading' ? 'Ukládám…' : 'Odeslat'}
+              </PrimaryButton>
+            </div>
           </div>
         </div>
       </div>

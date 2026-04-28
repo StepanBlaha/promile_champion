@@ -14,26 +14,27 @@
   margin-bottom: 1rem;
 }
 
-/* ── 6-column mosaic, dense-packed ── */
+/* ── 12-column bento, dense-packed ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 180px;
-  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 110px;
+  gap: 8px;
   grid-auto-flow: dense;
+  padding-top: 20px;
 }
 
-/* Large tiles — 3 cols × 2 rows */
-.itemWrap:nth-child(6n+1) { grid-column: span 3; grid-row: span 2; }
-.itemWrap:nth-child(6n+4) { grid-column: span 3; grid-row: span 2; }
-
-/* Wide short tile */
-.itemWrap:nth-child(6n+2) { grid-column: span 3; }
-.itemWrap:nth-child(6n+3) { grid-column: span 3; }
-
-/* Narrow + wide pair */
-.itemWrap:nth-child(6n+5) { grid-column: span 2; }
-.itemWrap:nth-child(6n+6) { grid-column: span 4; }
+/* ── Repeating 6-tile group ── */
+/* 1 — wide hero */
+.itemWrap:nth-child(6n+1) { grid-column: span 8; grid-row: span 3; }
+/* 2 — tall accent right of hero */
+.itemWrap:nth-child(6n+2) { grid-column: span 4; grid-row: span 2; }
+/* 3 — short fill under accent */
+.itemWrap:nth-child(6n+3) { grid-column: span 4; grid-row: span 1; }
+/* 4-6 — equal-width medium row */
+.itemWrap:nth-child(6n+4) { grid-column: span 4; grid-row: span 2; }
+.itemWrap:nth-child(6n+5) { grid-column: span 4; grid-row: span 2; }
+.itemWrap:nth-child(6n+6) { grid-column: span 4; grid-row: span 2; }
 
 /* ── Tile wrapper — holds sticker, does NOT clip ── */
 .itemWrap {
@@ -95,32 +96,39 @@
   color: #fff;
 }
 
+.noHover .itemWrap:hover .img     { transform: none; }
+.noHover .itemWrap:hover .overlay { opacity: 0; }
+
+.downloadable { cursor: pointer; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 140px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 120px;
   }
 
-  .itemWrap:nth-child(6n+1),
+  .itemWrap:nth-child(6n+1) { grid-column: span 4; grid-row: span 2; }
+  .itemWrap:nth-child(6n+2) { grid-column: span 2; grid-row: span 1; }
+  .itemWrap:nth-child(6n+3) { grid-column: span 2; grid-row: span 1; }
   .itemWrap:nth-child(6n+4) { grid-column: span 2; grid-row: span 2; }
-
-  .itemWrap:nth-child(6n+2),
-  .itemWrap:nth-child(6n+3) { grid-column: span 2; }
-
-  .itemWrap:nth-child(6n+5) { grid-column: span 2; }
-  .itemWrap:nth-child(6n+6) { grid-column: span 2; }
+  .itemWrap:nth-child(6n+5) { grid-column: span 2; grid-row: span 2; }
+  .itemWrap:nth-child(6n+6) { grid-column: span 2; grid-row: span 2; }
 }
 
 @media (max-width: 480px) {
-  .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .section { padding-left: 1rem; padding-right: 1rem; }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 140px;
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 110px;
+    gap: 6px;
   }
 
-  .itemWrap:nth-child(n) { grid-column: span 1; grid-row: span 1; }
-  .itemWrap:nth-child(5n+1) { grid-column: span 2; }
+  .itemWrap:nth-child(6n+1) { grid-column: span 4; grid-row: span 2; }
+  .itemWrap:nth-child(6n+2) { grid-column: span 2; grid-row: span 1; }
+  .itemWrap:nth-child(6n+3) { grid-column: span 2; grid-row: span 1; }
+  .itemWrap:nth-child(6n+4) { grid-column: span 2; grid-row: span 1; }
+  .itemWrap:nth-child(6n+5) { grid-column: span 2; grid-row: span 1; }
+  .itemWrap:nth-child(6n+6) { grid-column: span 4; grid-row: span 1; }
 }

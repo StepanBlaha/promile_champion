@@ -3,13 +3,7 @@
   height: auto;
   pointer-events: none;
   /* removes white backgrounds on light bg */
-  mix-blend-mode: multiply;
   filter: drop-shadow(2px 6px 12px rgba(0, 0, 0, 0.2));
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-@media (max-width: 768px) {
-  .sticker {
-    display: none;
-  }
-}

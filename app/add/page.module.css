@@ -8,6 +8,7 @@
 }
 
 .content {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +16,10 @@
   gap: 2.5rem;
   max-width: min(90%, 1200px);
   padding-top: 100px;
+}
+
+.titleWrap {
+  position: relative;
 }
 
 .title {
@@ -26,8 +31,21 @@
   border: 3px solid var(--fg);
   padding: 0.5rem 1.5rem;
   box-shadow: 6px 6px 0 var(--fg);
+  
 }
-
+@media(max-width: 700px){
+  .title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--fg);
+    border: 3px solid var(--fg);
+    padding: 0.5rem 1.5rem;
+    box-shadow: 6px 6px 0 var(--fg);
+    
+  }
+}
 .Form {
   width: min(400px, 90%);
   box-sizing: border-box;
@@ -70,6 +88,10 @@
   gap: 16px;
   align-items: center;
   justify-content: center;
+}
+
+.submitWrap {
+  position: relative;
 }
 
 .buttons {

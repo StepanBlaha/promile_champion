@@ -4,16 +4,26 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import Sticker from '@/components/Stickers/Sticker';
 
 const LINKS = [
-  { href: '/add', label: 'Add' },
-  { href: '/leaderboard', label: 'Leaderboard' },
+  { href: '/add', label: 'Přidat' },
+  { href: '/leaderboard', label: 'Žebříček' },
+  { href: '/gallery', label: 'Galerie' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const [time, setTime] = useState('');
+
+  const openMenu  = () => { setClosing(false); setOpen(true); };
+  const closeMenu = () => {
+    setClosing(true);
+    setTimeout(() => { setOpen(false); setClosing(false); }, 180);
+  };
+  const toggleMenu = () => (open && !closing ? closeMenu() : openMenu());
 
   useEffect(() => {
     const tick = () =>
@@ -33,9 +43,10 @@ export default function Navbar() {
   return (
     <>
       <nav className={styles.navbar}>
-        <Link href="/" className={styles.logo} onClick={() => setOpen(false)}>
-          <span className={styles.logoDot}>●</span>
-          PROMILE CHAMPION
+        <Sticker src="/drinks_outline/19.png" size={76} rotate={38} bottom={-16} right={-6} zIndex={101} />
+        <Link href="/" className={styles.logo} onClick={closeMenu}>
+          <img src="/drinks_outline/11.png" alt="" aria-hidden className={styles.logoDot} />
+          Šampión Promile
         </Link>
 
         <div className={styles.links}>
@@ -57,7 +68,7 @@ export default function Navbar() {
 
         <button
           className={styles.burger}
-          onClick={() => setOpen((o) => !o)}
+          onClick={toggleMenu}
           aria-label={open ? 'Zavřít menu' : 'Otevřít menu'}
           aria-expanded={open}
         >
@@ -68,13 +79,15 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className={styles.mobileMenu}>
+        <div className={`${styles.mobileMenu} ${closing ? styles.mobileMenuClosing : ''}`}>
+          <Sticker src="/drinks_outline/8.png"  size={100} rotate={-38} top={-10}   right={-2} zIndex={110} />
+          <Sticker src="/drinks_outline/15.png" size={100} rotate={-35}  bottom={-12} left={-10} zIndex={110} />
           {LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={`${styles.mobileLink} ${pathname === href ? styles.mobileLinkActive : ''}`}
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
             >
               {label}
             </Link>

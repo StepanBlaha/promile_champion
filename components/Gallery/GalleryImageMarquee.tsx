@@ -5,6 +5,24 @@ import Image from 'next/image';
 import { fetchData } from '@/services/submision';
 import { Submission } from '@/types/submission.types';
 import styles from './GalleryImageMarquee.module.css';
+import Sticker from '@/components/Stickers/Sticker';
+
+function drinkSticker(id: string) {
+  const n = [...id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 0);
+  if (n % 8 === 0) return null;
+  const src = `/drinks_outline/${(n % 30) + 1}.png`;
+  const size = 105 + ((n >> 8) % 40);
+  const half = Math.round(size * 0.3);
+  const ci = (n ^ (n >> 13)) % 4;
+  // lean into the corner: top-right +, top-left -, bottom-right -, bottom-left +
+  const baseRotate = [-38, 38, 35, -35][ci];
+  const rotate = baseRotate + (((n >> 5) % 21) - 10);
+  const corner = ci === 0 ? { top: -half, right: -half }
+    : ci === 1 ? { top: -half, left: -half }
+    : ci === 2 ? { bottom: -half, right: -half }
+    : { bottom: -half, left: -half };
+  return { src, rotate, size, ...corner };
+}
 
 export default function GalleryImageMarquee() {
   const [entries, setEntries] = useState<Submission[]>([]);
@@ -142,8 +160,23 @@ export default function GalleryImageMarquee() {
         onTouchStart={onTouchStart}
       >
         <div ref={trackRef} className={styles.track}>
-          {items.map((e, i) => (
+          {items.map((e, i) => {
+            const sticker = drinkSticker(e.id);
+            return (
             <div key={i} className={styles.card}>
+              <div className={styles.imgOuter}>
+                {sticker && (
+                  <Sticker
+                    src={sticker.src}
+                    size={sticker.size}
+                    rotate={sticker.rotate}
+                    top={'top' in sticker ? sticker.top : undefined}
+                    bottom={'bottom' in sticker ? sticker.bottom : undefined}
+                    left={'left' in sticker ? sticker.left : undefined}
+                    right={'right' in sticker ? sticker.right : undefined}
+                    zIndex={10}
+                  />
+                )}
               <div className={styles.imgWrap}>
                 <Image
                   src={e.photo_url!}
@@ -154,12 +187,14 @@ export default function GalleryImageMarquee() {
                   draggable={false}
                 />
               </div>
+              </div>
               <div className={styles.meta}>
                 <span className={styles.metaName}>{e.name}</span>
                 <span className={styles.metaPromile}>{e.promile}‰</span>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
