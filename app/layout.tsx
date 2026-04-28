@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sampionpromile.xyz"),
   title: "Šampión Promile",
   description: "Kdo dá nejvíc?",
 
@@ -31,9 +32,11 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    url: "https://www.sampionpromile.xyz",
     title: "Šampión Promile",
     description: "Kolik vypiješ?",
     siteName: "Šampión Promile",
+    images: ["/opengraph-image.png"],
   },
 
   twitter: {
