@@ -14,18 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://promile-champion.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-
   title: "Šampión Promile",
   description: "Kdo dá nejvíc?",
-
-  // ✅ LET NEXT HANDLE favicon.ico
-  icons: {
-    icon: "/favicon.ico",
-  },
 
   keywords: [
     "Drinking",
@@ -40,25 +31,15 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: siteUrl,
     title: "Šampión Promile",
     description: "Kolik vypiješ?",
     siteName: "Šampión Promile",
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`, // ✅ MUST be absolute
-        width: 1200,
-        height: 630,
-        alt: "Šampión Promile – kolik vypiješ?",
-      },
-    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Šampión Promile",
     description: "Kolik vypiješ?",
-    images: [`${siteUrl}/og-image.png`], // ✅ absolute
   },
 };
 
