@@ -22,6 +22,9 @@ export default function Home() {
           <Sticker src="/drinks_outline/11.png"    size={130}  rotate={12}  bottom={-50} left={-60} />
           <h1 className={styles.title}>Šampión Promile</h1>
         </div>
+        <p className={styles.text}>
+          Přidej jméno, promile, fotku s testerem a vyhraj!
+        </p>
         <div className={styles.buttons}>
           <PrimaryButton onClick={() => router.push('/add')}>Přidat Alkoholika</PrimaryButton>
           <SecondaryButton onClick={() => router.push('/leaderboard')}>Žebříček</SecondaryButton>
